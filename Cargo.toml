@@ -1,0 +1,11 @@
+[package]
+name = "display_heatmap"
+version = "0.1.0"
+authors = ["Carlos Urzua <urzutrasla@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+csv = "1"
+image = "0.22.0"
+serde = { version = "1.0", features = ["derive"] }
+lexical = "4.0.0"

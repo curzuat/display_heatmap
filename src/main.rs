@@ -2,15 +2,14 @@ extern crate csv;
 extern crate image;
 extern crate serde;
 extern crate lexical;
-extern crate serde_derive;
 
 use std::error::Error;
 //use std::io;
 use std::process;
 use std::env;
 
-//use serde::{Deserialize};
-use serde_derive::Deserialize;
+use serde::{Deserialize};
+//use serde_derive::Deserialize;
 
 
 
@@ -26,7 +25,7 @@ struct Record {
 
 
 
-fn example(target_file: &str) -> Result<(), Box<Error>> {
+fn example(target_file: &str) -> Result<(), Box<dyn Error>> {
     // Build the CSV reader and iterate over each record.
     let mut rdr = csv::ReaderBuilder::new()
         .has_headers(false)

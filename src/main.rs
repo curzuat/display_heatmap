@@ -2,6 +2,7 @@ extern crate csv;
 extern crate image;
 extern crate serde;
 extern crate lexical;
+extern crate serde_derive;
 
 use std::error::Error;
 //use std::io;

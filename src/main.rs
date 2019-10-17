@@ -18,8 +18,8 @@ use image::{ImageBuffer, RgbImage};
 
 #[derive(Debug, Deserialize)]
 struct Record {
-    row: u32,
     column: u32,
+    row: u32,
     color: String,
 }
 

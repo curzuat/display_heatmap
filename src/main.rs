@@ -1,7 +1,6 @@
 extern crate csv;
 extern crate image;
 extern crate serde;
-extern crate lexical;
 
 use std::error::Error;
 //use std::io;
@@ -49,7 +48,7 @@ fn example(target_file: &str) -> Result<(), Box<dyn Error>> {
 	        columns = record.column;
 	        color = record.color
 	        	.split("_")
-	        	.map(|c| lexical::parse::<u8, _>(c).unwrap())
+	        	.map(|c| parse::<u8, _>(c).unwrap())
 	        	.collect();
 
 	        img = ImageBuffer::new(rows + 1, columns + 1);
@@ -78,7 +77,7 @@ fn example(target_file: &str) -> Result<(), Box<dyn Error>> {
 	        let columns = record.column;
 	        let color: Vec<u8> = record.color
 	        	.split("_")
-	        	.map(|c| lexical::parse::<u8, _>(c).unwrap())
+	        	.map(|c| c.parse().unwrap())
 	        	.collect();
 
 	        if flag == false{
